@@ -54,6 +54,10 @@ func clockAngle(hour, minute int) (int, error) {
 	hourAngle := hour * anglePerHour
 	minuteAngle := minute * anglePerMinute
 
+	if minuteAngle == 0 {
+		return 360 - hourAngle, nil
+	}
+
 	if hourAngle > minuteAngle {
 		return hourAngle - minuteAngle, nil
 	}

@@ -34,6 +34,18 @@ func TestClockAngle(t *testing.T) {
 			result: 6,
 		},
 		{
+			name:   "happy path minute 0",
+			hour:   10,
+			minute: 0,
+			result: 60,
+		},
+		{
+			name:   "happy path hour 0",
+			hour:   0,
+			minute: 10,
+			result: 60,
+		},
+		{
 			name:     "invalid hour",
 			hour:     90,
 			minute:   20,
